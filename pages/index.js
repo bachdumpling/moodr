@@ -17,6 +17,8 @@ import Link from "next/link";
 import Data, { questionTable, userTable, vitalTable } from "../components/Data";
 import { useEffect, useState } from "react";
 import { api } from "../components/Api";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
 
 export default function Home() {
   let questionValue;
@@ -111,12 +113,7 @@ export default function Home() {
 
   return (
     <div className="absolute" style={{ paddingTop: "env(safe-area-inset-top" }}>
-      <div className="z-10 flex justify-between px-4 py-4 pt-12 border-b-[1px] fixed top-0 left-0 right-0 bg-[#FFFFFF]">
-        <Bars3Icon className="w-6 " />
-        <Link href="/profile">
-          <UserCircleIcon className="w-6 " />
-        </Link>
-      </div>
+      <Header />
 
       <div className="px-4 overflow-y-hidden overflow-x-hidden relative top-10">
         <div className="py-4">
@@ -163,26 +160,7 @@ export default function Home() {
         </div>
       </div>
 
-      <footer className="z-10 flex justify-between px-16 py-4 pb-8 border-t-[1px] fixed bottom-0 left-0 right-0 bg-[#FFFFFF]">
-        <Link href="/">
-          <div className="flex flex-col items-center">
-            <HomeIcon className="w-6" />
-            <p className="text-xs">Home</p>
-          </div>
-        </Link>
-
-        <Link href="/checkin">
-          <div className="flex flex-col items-center">
-            <FaceSmileIcon className="w-6" />
-            <p className="text-xs">Check In</p>
-          </div>
-        </Link>
-
-        <div className="flex flex-col items-center">
-          <DeviceTabletIcon className="w-6" />
-          <p className="text-xs">Moodr</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
