@@ -16,8 +16,6 @@ function Footer() {
   const router = useRouter();
   const id = router.pathname;
 
-  console.log(id);
-
   return (
     <footer className="z-10 flex justify-between px-14 py-4 pb-8 border-t-[1px] fixed bottom-0 left-0 right-0 bg-[#FFFFFF]">
       <Link href="/">

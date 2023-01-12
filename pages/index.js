@@ -21,6 +21,19 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 
 export default function Home() {
+  const [user, setUser] = useState(null)
+  useEffect(() => {
+    fetch(api + "/me")
+      .then((r) => {
+        if (r.ok) {
+          r.json().then((user) => {
+            console.log(user)
+            setUser(user)
+          });
+        }
+      })
+  }, [])
+
   let questionValue;
   let vitalValue;
 
@@ -72,9 +85,9 @@ export default function Home() {
     // questionValue = Object.values(questionTable.get(1));
   }, []);
 
-  // console.log(userTable);
-  // console.log(questionTable);
-  // console.log(vitalTable);
+  console.log(userTable);
+  console.log(questionTable);
+  console.log(vitalTable);
 
   // console.log(questionValue);
   // console.log(questionValue[0] == "Yes");

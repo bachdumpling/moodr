@@ -11,65 +11,76 @@ import Link from "next/link";
 import CheckinPage1 from "../components/CheckinPage1";
 import CheckinPage0 from "../components/CheckinPage0";
 import CheckinPage2 from "../components/CheckinPage2";
+import Data, { questionTable, userTable, vitalTable } from "../components/Data";
+import CheckinPage3 from "../components/CheckinPage3";
+import CheckinPage4 from "../components/CheckinPage4";
 
 function checkin() {
   const [currentPage, setCurrentPage] = useState(0);
+  const [answer1, setAnswer1] = useState("");
+  const [answer2, setAnswer2] = useState("");
+  const [answer3, setAnswer3] = useState("");
+  const [heartRate, setHeartRate] = useState("");
+  const [wristTemp, setWristTemp] = useState("");
 
-  const nextPage = () => {
+  function nextPage(e) {
     setCurrentPage(currentPage + 1);
-  };
+  }
 
-  const previousPage = () => {
+  function previousPage(e) {
     setCurrentPage(currentPage - 1);
-  };
+  }
+  // console.log(nextPage);
+  // console.log(userTable);
+  // console.log(questionTable);
+  // console.log(vitalTable);
 
   return (
     <div className="absolute" style={{ paddingTop: "env(safe-area-inset-top" }}>
-      <Link href="/">
-        <div className="z-10 flex justify-between px-4 py-4 pt-12 border-b-[1px] fixed top-0 left-0 right-0 bg-[#FFFFFF]">
-          <ChevronLeftIcon className="w-6 " />
-        </div>
-      </Link>
-
       <div className="overflow-y-hidden overflow-x-hidden relative top-10">
         <div className="">
+          {currentPage === 0 && <CheckinPage0 nextPage={nextPage} />}
+
           <form
           //   onSubmit={handleSubmit}
           >
-            {currentPage === 0 && (
-              <CheckinPage0
-                nextPage={nextPage}
-                // handleChange={handleChange}
-                // name={name}
-              />
-            )}
             {currentPage === 1 && (
               <CheckinPage1
                 nextPage={nextPage}
-                // handleChange={handleChange}
-                // name={name}
+                previousPage={previousPage}
+                answer1={answer1}
+                setAnswer1={setAnswer1}
               />
             )}
             {currentPage === 2 && (
               <CheckinPage2
                 nextPage={nextPage}
                 previousPage={previousPage}
-                // handleChange={handleChange}
-                // email={email}
+                setAnswer2={setAnswer2}
+                answer2={answer2}
+              />
+            )}
+            {currentPage === 3 && (
+              <CheckinPage3
+                nextPage={nextPage}
+                previousPage={previousPage}
+                answer3={answer3}
+                setAnswer3={setAnswer3}
+              />
+            )}
+            {currentPage === 4 && (
+              <CheckinPage4
+                nextPage={nextPage}
+                previousPage={previousPage}
+                setHeartRate={setHeartRate}
+                setWristTemp={setWristTemp}
+                heartRate ={heartRate}
+                wristTemp={wristTemp}
               />
             )}
           </form>
         </div>
       </div>
-
-      <footer className="z-10 flex justify-between px-4 py-4 pb-14 fixed bottom-0 left-0 right-0 bg-[#FFFFFF]">
-        <button
-          onClick={nextPage}
-          className="rounded-full w-full h-14 bg-green-400 text-white font-bold text-lg shadow-sm"
-        >
-          Continue
-        </button>
-      </footer>
     </div>
   );
 }

@@ -12,7 +12,7 @@ function device() {
       <Header />
       <div className="px-4 overflow-y-hidden overflow-x-hidden relative top-10">
         <div className="pt-4">
-          <h1 className="font-bold text-3xl">
+          <h1 className="font-bold text-4xl">
             Chanbin's Moodr
             {/* {user.name} */}
           </h1>
