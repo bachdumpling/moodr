@@ -11,9 +11,9 @@ function CheckinPage4({
   wristTemp,
   heartRate,
   setHeartRate,
-  setWristTemp,
+  setWristTemp
 }) {
-  console.log(heartRate, wristTemp);
+  // console.log(heartRate, wristTemp);
 
   return (
     <>
@@ -67,16 +67,18 @@ function CheckinPage4({
 
       <footer className="z-10 flex justify-between px-4 py-4 pb-14 fixed bottom-0 left-0 right-0">
         {heartRate && wristTemp ? (
-          <button onClick={nextPage} className="checkin-btn bg-[#ee7b69]">
-            Next
+          <button
+            type="submit"
+            className="checkin-btn bg-[#ee7b69]"
+          >
+            Submit
           </button>
         ) : (
           <button
             disabled="true"
-            onClick={nextPage}
             className="checkin-btn bg-[#ee7b69] opacity-40"
           >
-            Next
+            Submit
           </button>
         )}
       </footer>

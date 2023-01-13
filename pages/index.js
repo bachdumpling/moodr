@@ -21,22 +21,19 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 
 export default function Home() {
-  const [user, setUser] = useState([]);
-  useEffect(() => {
-    fetch(api + "/me")
-      .then((r) => {
-        if (r.ok) {
-          r.json();
-        }
-      })
-      .then((user) => {
-        console.log(user);
-        setUser(user);
-      });
-  }, []);
-
-  let questionValue;
-  let vitalValue;
+  // const [user, setUser] = useState([]);
+  // useEffect(() => {
+  //   fetch(api + "/me")
+  //     .then((r) => {
+  //       if (r.ok) {
+  //         r.json();
+  //       }
+  //     })
+  //     .then((user) => {
+  //       console.log(user);
+  //       setUser(user);
+  //     });
+  // }, []);
 
   useEffect(() => {
     async function getData() {
@@ -82,48 +79,7 @@ export default function Home() {
       ]);
     }
     getData();
-    // questionValue = Object.values(questionTable.get());
-    // questionValue = Object.values(questionTable.get(1));
   }, []);
-
-  console.log(userTable);
-  console.log(questionTable);
-  console.log(vitalTable);
-
-  // console.log(questionValue);
-  // console.log(questionValue[0] == "Yes");
-  // console.log(questionValue[1] == "Positive")
-
-  // console.log(questionValue[2] == "5" &&
-  // vitalValue[0] > 80 &&
-  // vitalValue[1] > 95);
-
-  // function checkMood() {
-  //   if (questionValue[0] == "Yes") {
-  //     if (questionValue[1] == "It makes me feel more positive and motivated.") {
-  //       if (questionValue[2] == "1") {
-  //       } else if (questionValue[2] == "2") {
-  //       } else if (questionValue[2] == "3") {
-  //       } else if (questionValue[2] == "4") {
-  //       } else if (
-  //         questionValue[2] == "5" &&
-  //         vitalValue[0] > 80 &&
-  //         vitalValue[1] > 95
-  //       ) {
-  //         return "Happiness";
-  //       }
-  //     } else if (
-  //       questionValue[1] == "It makes me feel more negative and discouraged."
-  //     ) {
-  //     } else if (
-  //       questionValue[1] == "It doesn't really have much of an effect"
-  //     ) {
-  //     }
-  //   } else {
-  //   }
-  // }
-
-  // console.log(checkMood(questionValue, vitalValue));
 
   return (
     <div className="absolute" style={{ paddingTop: "env(safe-area-inset-top" }}>
@@ -146,10 +102,12 @@ export default function Home() {
             questionnaire!
           </p>
 
-          <button className="mt-4 rounded-full w-full h-14 bg-[#FFFFFF] cursor-pointer text-[#516D33] font-bold text-lg shadow-sm bg-opacity-80">
-            {/* <button>Let's Start</button> */}
-            Let's Start
-          </button>
+          <Link href="/checkin">
+            <button className="mt-4 rounded-full w-full h-14 bg-[#FFFFFF] cursor-pointer text-[#516D33] font-bold text-lg shadow-sm bg-opacity-80">
+              {/* <button>Let's Start</button> */}
+              Let's Start
+            </button>
+          </Link>
         </div>
 
         <div className="mt-[32px]">

@@ -2,11 +2,15 @@ import Image from "next/image";
 import MoodFinderLandingPage from "../asset/MoodFinderLandingPage.svg";
 import React from "react";
 import Link from "next/link";
+import Router , {useRouter}  from 'next/router';
 
 function welcome() {
+  const router = useRouter();
+
   return (
     <div className="absolute" style={{ paddingTop: "env(safe-area-inset-top" }}>
       <div className="w-screen h-full flex flex-col justify-center items-center pt-40">
+        <button type="button" onClick={() => router.push("/")}>Hello</button>
         <Image className="" src={MoodFinderLandingPage} />
         <div className="text-center px-18 pt-12">
           <p className="text-4xl text-[#B0CB93] font-bold">Welcome to Moodr!</p>

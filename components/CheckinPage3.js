@@ -2,7 +2,7 @@ import React from "react";
 import CheckinHeader from "./CheckinHeader";
 
 function CheckinPage3({ nextPage, previousPage, answer3, setAnswer3 }) {
-  console.log(answer3)
+  // console.log(answer3)
 
   return (
     <>

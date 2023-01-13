@@ -20,19 +20,28 @@ function signup() {
   const [email, setEmail] = useState("");
   const [age, setAge] = useState("");
 
-  function handleLogin(e) {
+  function handleSignUp(e) {
     e.preventDefault();
     fetch(api + "/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({firstname, lastname, email, username, password, age}),
-    }).then((r) => {
-      r.json();
-    }).then((user) => {
-      console.log(user)
-    });
+      body: JSON.stringify({
+        firstname,
+        lastname,
+        email,
+        username,
+        password,
+        age,
+      }),
+    })
+      .then((r) => {
+        r.json();
+      })
+      .then((user) => {
+        console.log(user);
+      });
   }
 
   return (
@@ -47,7 +56,7 @@ function signup() {
           <h1 className="font-bold text-4xl">Create Account</h1>
           <p className="text-gray-400">Create a new account</p>
 
-          <form className="mt-6 space-y-2">
+          <form onClick={handleSignUp} className="mt-6 space-y-2">
             <div className="text-sm ">
               <div className="fixed py-4 px-4 text-green-400 ">
                 <UserIcon className="w-4" />
@@ -132,10 +141,7 @@ function signup() {
             </div>
             <div className="flex justify-between py-6">
               {username && password && firstname && lastname && email ? (
-                <button
-                  onClick={handleLogin}
-                  className="rounded-full w-full h-14 bg-[#B0CB93] text-white font-bold text-lg shadow-md"
-                >
+                <button className="rounded-full w-full h-14 bg-[#B0CB93] text-white font-bold text-lg shadow-md">
                   Sign Up
                 </button>
               ) : (

@@ -3,7 +3,7 @@ import React from "react";
 import CheckinHeader from "./CheckinHeader";
 
 function CheckinPage2({ nextPage, previousPage, answer2, setAnswer2 }) {
-  console.log(answer2);
+  // console.log(answer2);
 
   return (
     <>
@@ -26,9 +26,9 @@ function CheckinPage2({ nextPage, previousPage, answer2, setAnswer2 }) {
           </label>
           <input
             onClick={() => {
-              setAnswer2("positive");
+              setAnswer2("Positive");
             }}
-            checked={answer2 === "positive"}
+            checked={answer2 === "Positive"}
             type="checkbox"
             value="positive"
             className="h-6 w-6 bg-gray-100 rounded-[5px] checked:bg-[#F4B667] appearance-none"
@@ -41,9 +41,9 @@ function CheckinPage2({ nextPage, previousPage, answer2, setAnswer2 }) {
           </label>
           <input
             onClick={() => {
-              setAnswer2("neutral");
+              setAnswer2("Neutral");
             }}
-            checked={answer2 === "neutral"}
+            checked={answer2 === "Neutral"}
             type="checkbox"
             value="neutral"
             className="h-6 w-6 bg-gray-100 rounded-[5px] checked:bg-[#F4B667] appearance-none"
@@ -55,9 +55,9 @@ function CheckinPage2({ nextPage, previousPage, answer2, setAnswer2 }) {
           </label>
           <input
             onClick={() => {
-              setAnswer2("negative");
+              setAnswer2("Negative");
             }}
-            checked={answer2 === "negative"}
+            checked={answer2 === "Negative"}
             type="checkbox"
             value="negative"
             className="h-6 w-6 bg-gray-100 rounded-[5px] checked:bg-[#F4B667] appearance-none"

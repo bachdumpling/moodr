@@ -26,10 +26,10 @@ function CheckinPage1({ nextPage, previousPage, answer1, setAnswer1 }) {
           <button
             onClick={(e) => {
               e.preventDefault();
-              setAnswer1("yes");
+              setAnswer1("Yes");
             }}
             className={`${
-              answer1 == "yes" ? "border-green-400 border-[1.5px]" : null
+              answer1 == "Yes" ? "border-green-400 border-[1.5px]" : null
             } w-24 h-16 px-2 py-2 bg-[#FFFFFF] rounded-[10px] text-black shadow-lg`}
           >
             <div className="flex flex-row justify-center items-center gap-1">
@@ -39,10 +39,10 @@ function CheckinPage1({ nextPage, previousPage, answer1, setAnswer1 }) {
           <button
             onClick={(e) => {
               e.preventDefault();
-              setAnswer1("no");
+              setAnswer1("No");
             }}
             className={`${
-              answer1 == "no" ? "border-green-400 border-[1.5px]" : null
+              answer1 == "No" ? "border-green-400 border-[1.5px]" : null
             } w-24 h-16 px-2 py-2 bg-[#FFFFFF] rounded-[10px] text-black shadow-lg`}
           >
             <div className="flex flex-row justify-center items-center gap-1">
