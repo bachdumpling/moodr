@@ -18,7 +18,7 @@ import { getSession, signIn, useSession } from "next-auth/react";
 //   return { props: { data: session } };
 // }
 
-function login({data}) {
+function login({ data }) {
   // const { data: session, status } = useSession()
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -41,21 +41,7 @@ function login({data}) {
         });
       }
     });
-    // signIn(username,`${api} + "/"`)
   }
-
-  const [user, setUser] = useState(null)
-  useEffect(() => {
-    fetch(api + "/logged_in")
-      .then((r) => {
-        if (r.ok) {
-          r.json().then((user) => {
-            console.log(user)
-            setUser(user)
-          });
-        }
-      })
-  }, [])
 
   return (
     <div className="absolute" style={{ paddingTop: "env(safe-area-inset-top" }}>

@@ -21,18 +21,19 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 
 export default function Home() {
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState([]);
   useEffect(() => {
     fetch(api + "/me")
       .then((r) => {
         if (r.ok) {
-          r.json().then((user) => {
-            console.log(user)
-            setUser(user)
-          });
+          r.json();
         }
       })
-  }, [])
+      .then((user) => {
+        console.log(user);
+        setUser(user);
+      });
+  }, []);
 
   let questionValue;
   let vitalValue;

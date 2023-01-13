@@ -1,6 +1,7 @@
 import {
   ChevronLeftIcon,
   EnvelopeIcon,
+  FaceSmileIcon,
   LockClosedIcon,
   TagIcon,
   UserIcon,
@@ -9,6 +10,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { use, useState } from "react";
 import signupSvg from "../asset/signupSvg.svg";
+import { api } from "../components/Api";
 
 function signup() {
   const [username, setUsername] = useState("");
@@ -16,11 +18,21 @@ function signup() {
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
+  const [age, setAge] = useState("");
 
   function handleLogin(e) {
     e.preventDefault();
-
-    console.log(firstname, lastname, email, username, password);
+    fetch(api + "/signup", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({firstname, lastname, email, username, password, age}),
+    }).then((r) => {
+      r.json();
+    }).then((user) => {
+      console.log(user)
+    });
   }
 
   return (
@@ -70,13 +82,28 @@ function signup() {
               </div>
               <input
                 type="text"
-                id="username"
+                id="email"
                 placeholder="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="auth-field"
               />
             </div>
+
+            <div className="text-sm ">
+              <div className="fixed py-4 px-4 text-green-400 ">
+                <FaceSmileIcon className="w-4" />
+              </div>
+              <input
+                type="text"
+                id="age"
+                placeholder="age"
+                value={age}
+                onChange={(e) => setAge(e.target.value)}
+                className="auth-field"
+              />
+            </div>
+
             <div className="text-sm ">
               <div className="fixed py-4 px-4 text-green-400 ">
                 <TagIcon className="w-4" />
@@ -104,7 +131,7 @@ function signup() {
               />
             </div>
             <div className="flex justify-between py-6">
-              {username && password && firstname && lastname && email? (
+              {username && password && firstname && lastname && email ? (
                 <button
                   onClick={handleLogin}
                   className="rounded-full w-full h-14 bg-[#B0CB93] text-white font-bold text-lg shadow-md"
