@@ -75,7 +75,7 @@ function CheckinPage4({
           </button>
         ) : (
           <button
-            disabled="true"
+            disabled={true}
             className="checkin-btn bg-[#ee7b69] opacity-40"
           >
             Submit

@@ -44,13 +44,12 @@ function signup() {
       .then((r) => {
         r.json();
       })
-      .then((user) => {
-      });
+      .then((user) => {});
   }
 
   const popup = (
-    <div className="fixed inset-0 flex items-center justify-center bg-[#121212] bg-opacity-40">
-      <div className="bg-white shadow-lg  p-4 text-black rounded-[10px] w-11/12 h-72 flex justify-around flex-col items-center">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#121212] bg-opacity-40">
+      <div className="bg-white shadow-lg p-4 text-black rounded-[10px] w-11/12 h-72 flex justify-around flex-col items-center">
         <div className="w-full flex justify-end px-2">
           <XMarkIcon
             onClick={() => {
@@ -65,11 +64,12 @@ function signup() {
           <p className="text-2xl font-semibold pb-[4px]">Sign up successful!</p>
           <p className="text-sm text-gray-400">New account created</p>
         </div>
-        <button 
-        onClick={() => {
-          router.push("/login")
-        }}
-        className="w-28 text-[#B0CB93] h-10 border border-[#B0CB93] rounded-full text-sm my-4">
+        <button
+          onClick={() => {
+            router.push("/login");
+          }}
+          className="w-28 text-[#B0CB93] h-10 border border-[#B0CB93] rounded-full text-sm my-4"
+        >
           Log In
         </button>
       </div>
@@ -78,9 +78,9 @@ function signup() {
 
   return (
     // <div className="absolute" style={{ paddingTop: "env(safe-area-inset-top" }}>
-    <div>
+    <div className="">
       <Link href="/">
-        <div className="z-10 flex justify-between px-4 py-4 pt-8 fixed top-0 left-0 right-0">
+        <div className="flex justify-between px-4 py-4 pt-8 fixed top-0 left-0 right-0">
           <ChevronLeftIcon className="w-6" />
         </div>
       </Link>
@@ -178,7 +178,12 @@ function signup() {
             </div>
             <div className="flex justify-between py-6">
               {username && password && firstname && lastname && email ? (
-                <button className="rounded-full w-full h-14 bg-[#B0CB93] text-white font-bold text-lg shadow-md">
+                <button
+                  onClick={() => {
+                    setOpen(true);
+                  }}
+                  className="rounded-full w-full h-14 bg-[#B0CB93] text-white font-bold text-lg shadow-md"
+                >
                   Sign Up
                 </button>
               ) : (

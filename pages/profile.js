@@ -142,7 +142,7 @@ function profile() {
           </div>
         </div>
 
-        <div className="flex-col my-4 shadow-lg flex px-4 items-center rounded-[10px] h-full">
+        <div className="flex-col my-4 shadow-lg flex px-4 items-center rounded-[10px] h-full mb-[100px]">
           <button
             onClick={handleLogout}
             className="flex w-full justify-between py-4"
