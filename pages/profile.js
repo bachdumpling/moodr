@@ -28,58 +28,53 @@ import { api } from "../components/Api";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Switch from "react-ios-switch/lib/Switch";
+import Image from "next/image";
+import Cookies from "js-cookie";
+import { useRouter } from "next/router";
 
 function profile() {
-  const [user, setUser] = useState([]);
+  const router = useRouter();
+  const [user, setUser] = useState({});
+  useEffect(() => {
+    async function getData() {
+      setUser(Cookies.get());
+    }
+    getData();
+  }, []);
 
-  // useEffect(() => {
-  //   fetch(`${api}/me`, {
-  //     method: "GET",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //   })
-  //     .then((response) => {
-  //       console.log(response);
-  //       response.json();
-  //     })
-  //     .then((data) => {
-  //       console.log(data);
-  //       setUser(data);
-  //     })
-  //     .catch((error) => console.error(error));
-  // }, []);
-
-  function logout() {
-    fetch(`${api}/logout`, {
-      method: "DELETE",
+  function handleLogout() {
+    const cookies = Cookies.get();
+    Object.keys(cookies).forEach((cookie) => {
+      Cookies.remove(cookie);
     });
+
+    router.push("/");
   }
 
-  const profilePage = (
-    <div className="px-4 overflow-y-hidden overflow-x-hidden relative top-10">
-      <p>Hello</p>
-      <LoginForm />
-      <button onClick={logout} className="border">
-        Log Out
-      </button>
-    </div>
-  );
-
   return (
-    <div className="absolute" style={{ paddingTop: "env(safe-area-inset-top" }}>
+    // <div className="absolute" style={{ paddingTop: "env(safe-area-inset-top" }}>
+    <div>
       <Header />
 
-      <div className="px-4 overflow-y-hidden overflow-x-hidden relative top-10 w-screen space-y-2 pb-10">
+      <div className="max-w-sm mx-auto px-4 pt-4 overflow-y-hidden overflow-x-hidden relative top-10">
         <div className="pt-4">
           <h1 className="font-bold text-4xl">My Profile</h1>
         </div>
 
         <div className="py-6 flex justify-start items-center">
-          <div className="border-2 w-24 h-24 rounded-full mr-6"></div>
+          <div className="w-24 h-24 rounded-full mr-6">
+            <Image
+              width={100}
+              height={100}
+              src="https://st3.depositphotos.com/6672868/13701/v/600/depositphotos_137014128-stock-illustration-user-profile-icon.jpg"
+              className=" w-24 h-24 rounded-full object-contain"
+            />
+          </div>
           <div>
-            <p className="text-2xl font-bold">Chanbin Moon</p>
-            <p className="text-sm text-gray-500">21 Years Old</p>
+            <p className="text-2xl font-bold capitalize">
+              {user.firstname} {user.lastname}
+            </p>
+            <p className="text-sm text-gray-500">{user.age} Years Old</p>
           </div>
 
           <PencilIcon className="w-5 ml-6 text-gray-500" />
@@ -148,11 +143,13 @@ function profile() {
         </div>
 
         <div className="flex-col my-4 shadow-lg flex px-4 items-center rounded-[10px] h-full">
-          <button className="flex w-full justify-between py-4">
+          <button
+            onClick={handleLogout}
+            className="flex w-full justify-between py-4"
+          >
             <p className="text-sm text-red-500">Log Out</p>
           </button>
         </div>
-
       </div>
 
       <Footer />

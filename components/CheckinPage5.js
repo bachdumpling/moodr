@@ -3,7 +3,7 @@ import React from "react";
 import CheckinHeader from "./CheckinHeader";
 import Router, { useRouter } from "next/router";
 
-function CheckinPage5({ mood, emoji, setCurrentPage }) {
+function CheckinPage5({ mood, emoji, setCurrentPage, setAnswer1, setAnswer2, setAnswer3 }) {
   const currentDate = new Date();
   const formattedDate = currentDate.toLocaleDateString("en-US", {
     weekday: "long",
@@ -34,6 +34,9 @@ function CheckinPage5({ mood, emoji, setCurrentPage }) {
         <button
           onClick={() => {
             setCurrentPage(0)
+            setAnswer1("")
+            setAnswer2("")
+            setAnswer3("")
           }}
           className="checkin-btn border-[#ee7b69] border bg-white text-[#ee7b69]"
         >

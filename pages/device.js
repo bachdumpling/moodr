@@ -1,25 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Image from "next/image";
 import { WatchUI } from "../components/WatchUI";
 import { BellAlertIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
 import Switch from "react-ios-switch";
+import Cookies from "js-cookie";
 
 function device() {
+  const [user, setUser] = useState({});
+  useEffect(() => {
+    async function getData() {
+      setUser(Cookies.get());
+    }
+    getData();
+  }, []);
+
   return (
-    <div className="absolute" style={{ paddingTop: "env(safe-area-inset-top" }}>
+    // <div className="absolute" style={{ paddingTop: "env(safe-area-inset-top" }}>
+    <div>
       <Header />
-      <div className="px-4 overflow-y-hidden overflow-x-hidden relative top-10">
+      <div className=" max-w-sm mx-auto px-4 pt-4 overflow-y-hidden overflow-x-hidden relative top-10">
         <div className="pt-4">
-          <h1 className="font-bold text-4xl">
-            Chanbin's Moodr
-            {/* {user.name} */}
-          </h1>
+          <span className="font-bold text-4xl capitalize">
+            {user.firstname}
+          </span>
+          <span className="font-bold text-4xl ">'s Moodr</span>
         </div>
       </div>
 
-      <div className="overflow-y-hidden overflow-x-hidden relative top-10">
+      <div className="max-w-sm mx-auto overflow-y-hidden overflow-x-hidden relative top-10">
         <p className="font-bold text-2xl px-4 py-4">Watch Faces</p>
         <div className="px-4 flex overflow-x-auto gap-4 scrollbar-hide w-screen">
           {WatchUI.map((item) => {

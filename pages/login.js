@@ -9,22 +9,13 @@ import React, { useEffect, useState } from "react";
 import loginSvg from "../asset/loginSvg.svg";
 import { api } from "../components/Api";
 import { getSession, signIn, useSession } from "next-auth/react";
+import Cookies from "js-cookie";
+import { useRouter } from "next/router";
 
-// export async function getServerSideProps(context) {
-//   // Fetch data from external API
-//   const session = await getSession(context);
-
-//   // Pass data to the page via props
-//   return { props: { data: session } };
-// }
-
-function login({ data }) {
-  // const { data: session, status } = useSession()
+function login() {
+  const router = useRouter();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
-  // console.log(api + "/login");
-  // console.log(session);
 
   function handleLogin(e) {
     e.preventDefault();
@@ -37,19 +28,28 @@ function login({ data }) {
     }).then((r) => {
       if (r.ok) {
         r.json().then((user) => {
+          Cookies.set("id", user.id);
+          Cookies.set("username", user.username);
+          Cookies.set("firstname", user.firstname);
+          Cookies.set("lastname", user.lastname);
+          Cookies.set("email", user.email);
+          Cookies.set("age", user.age);
           console.log(user);
         });
       }
     });
+    router.push("/");
   }
 
   return (
     <div className="absolute" style={{ paddingTop: "env(safe-area-inset-top" }}>
-      <Link href="/welcome">
-        <ChevronLeftIcon className="w-6" />
+      <Link href="/">
+        <div className="z-10 flex justify-between px-4 py-4 pt-8 fixed top-0 left-0 right-0">
+          <ChevronLeftIcon className="w-6" />
+        </div>
       </Link>
-      <div className="w-screen h-full flex flex-col justify-center items-center pt-16">
-        <Image src={loginSvg} alt="login image" />
+      <div className="w-screen h-full flex flex-col justify-center items-center pt-32">
+        <Image className="w-40" src={loginSvg} alt="login image" />
 
         <div className="pt-4 flex justify-start flex-col w-full px-4 py-4">
           <h1 className="font-bold text-4xl">Welcome Back!</h1>

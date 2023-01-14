@@ -17,7 +17,7 @@ function Footer() {
   const id = router.pathname;
 
   return (
-    <footer className="z-10 flex justify-between px-14 py-4 pb-8 border-t-[1px] fixed bottom-0 left-0 right-0 bg-[#FFFFFF]">
+    <footer className=" max-w-sm mx-auto z-10 flex justify-between px-10 py-4 pb-4 border-t-[1px] fixed bottom-0 left-0 right-0 bg-[#FFFFFF]">
       <Link href="/">
         <div className="flex flex-col items-center w-14">
           {id == "/" ? (

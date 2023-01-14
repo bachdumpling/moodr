@@ -14,44 +14,43 @@ import {
 import PreviousMoodCard from "../components/PreviousMoodCard";
 import CustomizeYourMoodr from "../components/CustomizeYourMoodr";
 import Link from "next/link";
-import Data, { questionTable, userTable, vitalTable } from "../components/Data";
+import Data, {
+  questionTable,
+  resultTable,
+  vitalTable,
+} from "../components/Data";
 import { useEffect, useState } from "react";
 import { api } from "../components/Api";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import Cookies from "js-cookie";
+import { Router, useRouter } from "next/router";
+import Welcome from "../components/Welcome";
 
-export default function Home() {
-  // const [user, setUser] = useState([]);
-  // useEffect(() => {
-  //   fetch(api + "/me")
-  //     .then((r) => {
-  //       if (r.ok) {
-  //         r.json();
-  //       }
-  //     })
-  //     .then((user) => {
-  //       console.log(user);
-  //       setUser(user);
-  //     });
-  // }, []);
+export default function homePage() {
+  const [user, setUser] = useState({});
+  const [result, setResult] = useState([]);
 
+  useEffect(() => {
+    setUser(Cookies.get());
+  }, []);
+
+  if (!user.id) {
+    return <Welcome />;
+  }
+
+  return <Home user={user} result={result} setResult={setResult} />;
+}
+
+export function Home({ user, result, setResult }) {
   useEffect(() => {
     async function getData() {
       await Promise.all([
-        fetch(`${api}/users`)
+        fetch(`${api}/results/${user.id}`)
           .then((res) => res.json())
-          .then((users) => {
-            users.forEach((user) => {
-              userTable.add(user.user_id, {
-                username: user.username,
-                age: user.age,
-                firstname: user.firstname,
-                lastname: user.lastname,
-                email: user.email,
-              });
-            });
+          .then((results) => {
+            setResult(results);
           }),
-
         fetch(`${api}/questions`)
           .then((res) => res.json())
           .then((questions) => {
@@ -79,17 +78,20 @@ export default function Home() {
       ]);
     }
     getData();
-  }, []);
+  }, [user.id]);
+
+  console.log(user);
+  console.log(result);
 
   return (
-    <div className="absolute" style={{ paddingTop: "env(safe-area-inset-top" }}>
+    // <div className="absolute" style={{ paddingTop: "env(safe-area-inset-top" }}>
+    <div className="">
       <Header />
 
-      <div className="px-4 overflow-y-hidden overflow-x-hidden relative top-10">
+      <div className=" max-w-sm mx-auto px-4 pt-4 overflow-y-hidden overflow-x-hidden relative top-10">
         <div className="py-4">
-          <h1 className="font-bold text-4xl">
-            Hi Chanbin.
-            {/* {user.name} */}
+          <h1 className="font-bold text-4xl capitalize">
+            Hi {user.firstname}!
           </h1>
           <p className="text-lg font-bold text-gray-500">Welcome back!</p>
         </div>
@@ -104,7 +106,6 @@ export default function Home() {
 
           <Link href="/checkin">
             <button className="mt-4 rounded-full w-full h-14 bg-[#FFFFFF] cursor-pointer text-[#516D33] font-bold text-lg shadow-sm bg-opacity-80">
-              {/* <button>Let's Start</button> */}
               Let's Start
             </button>
           </Link>
@@ -113,20 +114,50 @@ export default function Home() {
         <div className="mt-[32px]">
           <div className="flex justify-between items-center">
             <p className="text-2xl font-semibold">Previous Moods</p>
-            <p className="text-sm text-green-500">See More</p>
+
+            {result.length > 0 ? (
+              <button
+                onClick={() => {
+                  router.push({
+                    pathname: "/previousmood",
+                    query: { data: JSON.stringify(result) },
+                  });
+                }}
+                className="text-sm text-green-500"
+              >
+                See More
+              </button>
+            ) : null}
           </div>
 
-          <div>
-            <PreviousMoodCard />
-            <PreviousMoodCard />
-            <PreviousMoodCard />
-          </div>
+          {result.length > 0 ? (
+            <div>
+              {result
+                .slice()
+                .reverse()
+                .slice(0, 3)
+                .map((item) => {
+                  return (
+                    <PreviousMoodCard
+                      createdAt={item.created_at}
+                      result={item}
+                      key={item.id}
+                    />
+                  );
+                })}
+            </div>
+          ) : (
+            <div className="pt-8  h-12 flex justify-center items-center">
+              <p className="text-gray-400">
+                Start your first mood check in ...
+              </p>
+            </div>
+          )}
 
-          <div className="mt-[32px] mb-[126px]">
+          <div className="mt-[32px] mb-[100px]">
             <p className="text-2xl font-semibold">Customize Your Moodr</p>
             <div>
-              <CustomizeYourMoodr />
-              <CustomizeYourMoodr />
+              <CustomizeYourMoodr user={user} />
             </div>
           </div>
         </div>

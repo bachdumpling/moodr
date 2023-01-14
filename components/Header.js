@@ -9,10 +9,9 @@ function Header() {
   const id = router.pathname;
 
   return (
-    <div className="z-10 flex justify-between px-4 py-4 pt-12 border-b-[1px] fixed top-0 left-0 right-0 bg-[#FFFFFF]">
-      <Link href="/welcome">
-        <Bars3Icon className="w-6 " />
-      </Link>
+    <div className=" max-w-sm mx-auto z-10 flex justify-between px-4 py-4 border-b-[1px] fixed top-0 left-0 right-0 bg-[#FFFFFF]">
+      <Bars3Icon className="w-6 " />
+
       <Link href="/profile">
         {id == "/profile" ? (
           <UserCircleIconSolid className="w-6 " />

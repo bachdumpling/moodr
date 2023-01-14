@@ -4,7 +4,7 @@ import {
     DeviceTabletIcon,
   } from "@heroicons/react/24/outline";
 
-function CustomizeYourMoodr() {
+function CustomizeYourMoodr({user}) {
   return (
     <div className="mt-[12px] border-t-[0.1px] shadow-md flex justify-between py-4 px-4 items-center rounded-[10px]">
       <div className="flex flex-row items-left items-center">
@@ -12,7 +12,7 @@ function CustomizeYourMoodr() {
           <DeviceTabletIcon className="w-5" />
         </div>
         <span className="flex flex-col items-left">
-          <span className="font-semibold text-lg">Chanbin's Moodr</span>
+          <span className="font-semibold text-lg capitalize">{user.firstname}'s Moodr</span>
           <p className="text-xs text-gray-500">Customize to fit your needs</p>
         </span>
       </div>

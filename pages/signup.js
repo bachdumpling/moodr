@@ -45,12 +45,15 @@ function signup() {
   }
 
   return (
-    <div className="absolute" style={{ paddingTop: "env(safe-area-inset-top" }}>
-      <Link href="/welcome">
-        <ChevronLeftIcon className="w-6 my-4 mx-4" />
+    // <div className="absolute" style={{ paddingTop: "env(safe-area-inset-top" }}>
+    <div>
+      <Link href="/">
+        <div className="z-10 flex justify-between px-4 py-4 pt-8 fixed top-0 left-0 right-0">
+          <ChevronLeftIcon className="w-6" />
+        </div>
       </Link>
-      <div className="w-screen h-full flex flex-col justify-center items-center pt-6">
-        <Image src={signupSvg} />
+      <div className="w-full h-screen flex flex-col justify-center items-center pt-16">
+        <Image className="w-40" src={signupSvg} alt="sign up photo" />
 
         <div className="pt-4 flex justify-start flex-col w-full px-4 py-4">
           <h1 className="font-bold text-4xl">Create Account</h1>
@@ -63,7 +66,7 @@ function signup() {
               </div>
               <input
                 type="text"
-                id="username"
+                id="firstname"
                 placeholder="First Name"
                 value={firstname}
                 onChange={(e) => setFirstname(e.target.value)}
@@ -77,7 +80,7 @@ function signup() {
               </div>
               <input
                 type="text"
-                id="username"
+                id="lastname"
                 placeholder="Last Name"
                 value={lastname}
                 onChange={(e) => setLastname(e.target.value)}
@@ -146,7 +149,7 @@ function signup() {
                 </button>
               ) : (
                 <button
-                  disabled="true"
+                  disabled={true}
                   className="opacity-50 rounded-full w-full h-14 bg-[#B0CB93] text-white font-bold text-lg shadow-md"
                 >
                   Sign Up
