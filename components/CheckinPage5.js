@@ -32,8 +32,10 @@ function CheckinPage5({
 
       <div className=" py-6 w-full flex justify-center">
         <div className="w-5/6 shadow-lg flex justify-center flex-col items-center py-10 rounded-[10px]">
-          <p className="text-sm pb-4 text-gray-500">You are probably feeling:</p>
-          <div className="border w-40 h-20 border-[#ee7b69] flex justify-center items-center rounded-[10px] text-lg space-x-4">
+          <p className="text-sm pb-4 text-gray-500">
+            You are probably feeling:
+          </p>
+          <div className="border w-2/3 h-20 border-[#ee7b69] flex justify-center items-center rounded-[10px] text-lg space-x-4 px-10">
             <p className="text-4xl">{emoji}</p>
             <p className="text-xl font-semibold">{mood}</p>
           </div>
