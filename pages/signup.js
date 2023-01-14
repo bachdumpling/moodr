@@ -5,9 +5,12 @@ import {
   LockClosedIcon,
   TagIcon,
   UserIcon,
+  XMarkIcon,
 } from "@heroicons/react/24/outline";
+import { CheckCircleIcon, TicketIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React, { use, useState } from "react";
 import signupSvg from "../asset/signupSvg.svg";
 import { api } from "../components/Api";
@@ -19,6 +22,8 @@ function signup() {
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
   const [age, setAge] = useState("");
+  const [open, setOpen] = useState(false);
+  const router = useRouter();
 
   function handleSignUp(e) {
     e.preventDefault();
@@ -40,9 +45,36 @@ function signup() {
         r.json();
       })
       .then((user) => {
-        console.log(user);
       });
   }
+
+  const popup = (
+    <div className="fixed inset-0 flex items-center justify-center bg-[#121212] bg-opacity-40">
+      <div className="bg-white shadow-lg  p-4 text-black rounded-[10px] w-11/12 h-72 flex justify-around flex-col items-center">
+        <div className="w-full flex justify-end px-2">
+          <XMarkIcon
+            onClick={() => {
+              setOpen(!open);
+            }}
+            className="w-6"
+          />
+        </div>
+        <CheckCircleIcon className="text-[#B0CB93] w-16 mb-4" />
+
+        <div className="flex flex-col justify-center items-center">
+          <p className="text-2xl font-semibold pb-[4px]">Sign up successful!</p>
+          <p className="text-sm text-gray-400">New account created</p>
+        </div>
+        <button 
+        onClick={() => {
+          router.push("/login")
+        }}
+        className="w-28 text-[#B0CB93] h-10 border border-[#B0CB93] rounded-full text-sm my-4">
+          Log In
+        </button>
+      </div>
+    </div>
+  );
 
   return (
     // <div className="absolute" style={{ paddingTop: "env(safe-area-inset-top" }}>
@@ -60,36 +92,38 @@ function signup() {
           <p className="text-gray-400">Create a new account</p>
 
           <form onClick={handleSignUp} className="mt-6 space-y-2">
-            <div className="text-sm ">
-              <div className="fixed py-4 px-4 text-green-400 ">
-                <UserIcon className="w-4" />
+            <div className="grid grid-cols-2 grid-flow-row gap-2">
+              <div className="text-sm relative">
+                <div className=" absolute py-4 px-4 text-green-400 ">
+                  <UserIcon className="w-4" />
+                </div>
+                <input
+                  type="text"
+                  id="firstname"
+                  placeholder="First Name"
+                  value={firstname}
+                  onChange={(e) => setFirstname(e.target.value)}
+                  className="auth-field"
+                />
               </div>
-              <input
-                type="text"
-                id="firstname"
-                placeholder="First Name"
-                value={firstname}
-                onChange={(e) => setFirstname(e.target.value)}
-                className="auth-field"
-              />
+
+              <div className="text-sm relative">
+                <div className=" absolute py-4 px-4 text-green-400 ">
+                  <UserIcon className="w-4" />
+                </div>
+                <input
+                  type="text"
+                  id="lastname"
+                  placeholder="Last Name"
+                  value={lastname}
+                  onChange={(e) => setLastname(e.target.value)}
+                  className="auth-field"
+                />
+              </div>
             </div>
 
-            <div className="text-sm ">
-              <div className="fixed py-4 px-4 text-green-400 ">
-                <UserIcon className="w-4" />
-              </div>
-              <input
-                type="text"
-                id="lastname"
-                placeholder="Last Name"
-                value={lastname}
-                onChange={(e) => setLastname(e.target.value)}
-                className="auth-field"
-              />
-            </div>
-
-            <div className="text-sm ">
-              <div className="fixed py-4 px-4 text-green-400 ">
+            <div className="text-sm relative">
+              <div className=" absolute py-4 px-4 text-green-400 ">
                 <EnvelopeIcon className="w-4" />
               </div>
               <input
@@ -102,8 +136,8 @@ function signup() {
               />
             </div>
 
-            <div className="text-sm ">
-              <div className="fixed py-4 px-4 text-green-400 ">
+            <div className="text-sm relative">
+              <div className=" absolute py-4 px-4 text-green-400 ">
                 <FaceSmileIcon className="w-4" />
               </div>
               <input
@@ -116,8 +150,8 @@ function signup() {
               />
             </div>
 
-            <div className="text-sm ">
-              <div className="fixed py-4 px-4 text-green-400 ">
+            <div className="text-sm relative">
+              <div className=" absolute py-4 px-4 text-green-400 ">
                 <TagIcon className="w-4" />
               </div>
               <input
@@ -129,8 +163,8 @@ function signup() {
                 className="auth-field"
               />
             </div>
-            <div className="text-sm ">
-              <div className="fixed py-4 px-4 text-green-400 ">
+            <div className="text-sm relative">
+              <div className=" absolute py-4 px-4 text-green-400 ">
                 <LockClosedIcon className="w-4" />
               </div>
               <input
@@ -166,6 +200,7 @@ function signup() {
           </div>
         </div>
       </div>
+      {open && popup}
     </div>
   );
 }

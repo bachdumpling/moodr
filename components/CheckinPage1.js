@@ -57,7 +57,7 @@ function CheckinPage1({ nextPage, previousPage, answer1, setAnswer1 }) {
           Next
         </button>
           :
-        <button disabled="true" onClick={nextPage} className="checkin-btn bg-[#EE7B69] opacity-40">
+        <button disabled={true} onClick={nextPage} className="checkin-btn bg-[#EE7B69] opacity-40">
           Next
         </button>}
       </footer>

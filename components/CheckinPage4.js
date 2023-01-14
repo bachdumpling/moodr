@@ -33,7 +33,7 @@ function CheckinPage4({
         <div className="flex justify-between items-center h-20 rounded-[10px] mx-4 shadow-lg px-8">
           <div className="flex w-4/6 h-full justify-start items-center">
             <Image src={Heartbeat} className="w-8 mr-8" alt="Heart beat" />
-            <label>Heart Rate</label>
+            <label className="text-sm px-auto">Heart Rate</label>
           </div>
           <input
             onChange={(e) => {
@@ -52,7 +52,7 @@ function CheckinPage4({
               className="w-8 mr-8"
               alt="Heart beat"
             />
-            <label className="">Wrist Temperature</label>
+            <label className="text-sm px-auto">Wrist Temperature</label>
           </div>
           <input
             onChange={(e) => {

@@ -21,7 +21,7 @@ function CheckinPage2({ nextPage, previousPage, answer2, setAnswer2 }) {
 
       <div className="grid mt-8 mb-8 gap-y-3 ">
         <div className="flex justify-between items-center h-20 rounded-[10px] mx-4 px-4 shadow-lg">
-          <label className="text-sm">
+          <label className="text-sm pr-5">
             It makes me feel more positive and motivated
           </label>
           <input
@@ -72,7 +72,7 @@ function CheckinPage2({ nextPage, previousPage, answer2, setAnswer2 }) {
           </button>
         ) : (
           <button
-            disabled="true"
+            disabled={true}
             onClick={nextPage}
             className="checkin-btn bg-[#F4B667] opacity-40"
           >

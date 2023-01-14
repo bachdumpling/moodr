@@ -72,7 +72,6 @@ function checkin() {
     }
   }
   checkEmoji(mood);
-  console.log(mood, emoji);
 
   function nextPage(e) {
     setCurrentPage(currentPage + 1);

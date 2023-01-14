@@ -13,7 +13,7 @@ function CheckinPage0({ nextPage }) {
         </div>
       </Link>
       <div className="w-screen flex flex-col justify-center items-center mt-36">
-        <Image className="" src={MoodFinderLandingPage} />
+        <Image className="" src={MoodFinderLandingPage} alt="landing page" />
         <div className="text-center px-20 pt-12">
           <p className="text-2xl text-[#B0CB93] font-bold">Find Your Mood</p>
           <p className="text-sm text-gray-400 pt-2">

@@ -112,7 +112,7 @@ function CheckinPage3({ nextPage, previousPage, answer3, setAnswer3 }) {
           </button>
         ) : (
           <button
-            disabled="true"
+            disabled={true}
             onClick={nextPage}
             className="checkin-btn bg-blue-400 opacity-40"
           >

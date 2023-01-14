@@ -1,16 +1,3 @@
-import {
-  Bars3Icon,
-  UserCircleIcon,
-  HomeIcon,
-  FaceSmileIcon,
-  DeviceTabletIcon,
-  ChevronRightIcon,
-} from "@heroicons/react/24/outline";
-import {
-  HomeIcon as HomeIconSolid,
-  FaceSmileIcon as FaceSmileIconSolid,
-  DeviceTabletIcon as DeviceTabletIconSolid,
-} from "@heroicons/react/24/solid";
 import PreviousMoodCard from "../components/PreviousMoodCard";
 import CustomizeYourMoodr from "../components/CustomizeYourMoodr";
 import Link from "next/link";
@@ -43,6 +30,7 @@ export default function homePage() {
 }
 
 export function Home({ user, result, setResult }) {
+  const router = useRouter();
   useEffect(() => {
     async function getData() {
       await Promise.all([
@@ -80,9 +68,6 @@ export function Home({ user, result, setResult }) {
     getData();
   }, [user.id]);
 
-  console.log(user);
-  console.log(result);
-
   return (
     // <div className="absolute" style={{ paddingTop: "env(safe-area-inset-top" }}>
     <div className="">
@@ -91,9 +76,9 @@ export function Home({ user, result, setResult }) {
       <div className=" max-w-sm mx-auto px-4 pt-4 overflow-y-hidden overflow-x-hidden relative top-10">
         <div className="py-4">
           <h1 className="font-bold text-4xl capitalize">
-            Hi {user.firstname}!
+            Hi, {user.firstname}
           </h1>
-          <p className="text-lg font-bold text-gray-500">Welcome back!</p>
+          <p className="text-md font-bold text-gray-400">Welcome back!</p>
         </div>
 
         <div className="bg-[#B0CB93] text-white py-4 px-4 rounded-[10px] shadow-md">
@@ -120,7 +105,7 @@ export function Home({ user, result, setResult }) {
                 onClick={() => {
                   router.push({
                     pathname: "/previousmood",
-                    query: { data: JSON.stringify(result) },
+                    query: { userid: user.id },
                   });
                 }}
                 className="text-sm text-green-500"

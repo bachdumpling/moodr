@@ -23,7 +23,6 @@ import CustomizeYourMoodr from "../components/CustomizeYourMoodr";
 import Link from "next/link";
 import Data, { questionTable, userTable, vitalTable } from "../components/Data";
 import { useEffect, useState } from "react";
-import LoginForm from "../components/LoginForm";
 import { api } from "../components/Api";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -68,6 +67,7 @@ function profile() {
               height={100}
               src="https://st3.depositphotos.com/6672868/13701/v/600/depositphotos_137014128-stock-illustration-user-profile-icon.jpg"
               className=" w-24 h-24 rounded-full object-contain"
+              alt="avatar"
             />
           </div>
           <div>

@@ -25,24 +25,27 @@ function login() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ username, password }),
-    }).then((r) => {
-      if (r.ok) {
-        r.json().then((user) => {
-          Cookies.set("id", user.id);
-          Cookies.set("username", user.username);
-          Cookies.set("firstname", user.firstname);
-          Cookies.set("lastname", user.lastname);
-          Cookies.set("email", user.email);
-          Cookies.set("age", user.age);
-          console.log(user);
-        });
-      }
-    });
-    router.push("/");
+    })
+      .then((r) => {
+        if (r.ok) {
+          r.json().then((user) => {
+            Cookies.set("id", user.id);
+            Cookies.set("username", user.username);
+            Cookies.set("firstname", user.firstname);
+            Cookies.set("lastname", user.lastname);
+            Cookies.set("email", user.email);
+            Cookies.set("age", user.age);
+          });
+        }
+      })
+      .then(() => {
+        router.push("/loginsuccessful");
+      });
   }
 
   return (
-    <div className="absolute" style={{ paddingTop: "env(safe-area-inset-top" }}>
+    // <div className="absolute" style={{ paddingTop: "env(safe-area-inset-top" }}>
+      <div>
       <Link href="/">
         <div className="z-10 flex justify-between px-4 py-4 pt-8 fixed top-0 left-0 right-0">
           <ChevronLeftIcon className="w-6" />
@@ -55,9 +58,9 @@ function login() {
           <h1 className="font-bold text-4xl">Welcome Back!</h1>
           <p className="text-gray-400">Log in to continue</p>
 
-          <form className="mt-6 space-y-2">
-            <div className="text-sm ">
-              <div className="fixed py-4 px-4 text-green-400 ">
+          <form className=" mt-6 space-y-2">
+            <div className="text-sm relative">
+              <div className="absolute py-4 px-4 text-green-400 ">
                 <EnvelopeIcon className="w-4" />
               </div>
               <input
@@ -69,8 +72,8 @@ function login() {
                 className="auth-field"
               />
             </div>
-            <div className="text-sm ">
-              <div className="fixed py-4 px-4 text-green-400 ">
+            <div className="text-sm relative">
+              <div className="absolute py-4 px-4 text-green-400 ">
                 <LockClosedIcon className="w-4" />
               </div>
               <input
