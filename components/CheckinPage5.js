@@ -3,7 +3,14 @@ import React from "react";
 import CheckinHeader from "./CheckinHeader";
 import Router, { useRouter } from "next/router";
 
-function CheckinPage5({ mood, emoji, setCurrentPage, setAnswer1, setAnswer2, setAnswer3 }) {
+function CheckinPage5({
+  mood,
+  emoji,
+  setCurrentPage,
+  setAnswer1,
+  setAnswer2,
+  setAnswer3,
+}) {
   const currentDate = new Date();
   const formattedDate = currentDate.toLocaleDateString("en-US", {
     weekday: "long",
@@ -23,20 +30,22 @@ function CheckinPage5({ mood, emoji, setCurrentPage, setAnswer1, setAnswer2, set
         </div>
       </div>
 
-      <div className="flex justify-center flex-col items-center py-6">
-        <p className="text-sm py-4">You are probably feeling:</p>
-        <div className="border w-32 h-16 flex justify-center items-center rounded-[10px] text-lg space-x-2">
-          <p>{emoji}</p>
-          <p>{mood}</p>
+      <div className=" py-6 w-full flex justify-center">
+        <div className="w-5/6 shadow-lg flex justify-center flex-col items-center py-10 rounded-[10px]">
+          <p className="text-sm pb-4 text-gray-500">You are probably feeling:</p>
+          <div className="border w-40 h-20 border-[#ee7b69] flex justify-center items-center rounded-[10px] text-lg space-x-4">
+            <p className="text-4xl">{emoji}</p>
+            <p className="text-xl font-semibold">{mood}</p>
+          </div>
         </div>
       </div>
       <footer className="z-10 flex flex-col gap-y-2 justify-between px-4 py-4 pb-14 fixed bottom-0 left-0 right-0">
         <button
           onClick={() => {
-            setCurrentPage(0)
-            setAnswer1("")
-            setAnswer2("")
-            setAnswer3("")
+            setCurrentPage(0);
+            setAnswer1("");
+            setAnswer2("");
+            setAnswer3("");
           }}
           className="checkin-btn border-[#ee7b69] border bg-white text-[#ee7b69]"
         >
