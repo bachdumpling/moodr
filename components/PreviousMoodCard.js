@@ -10,8 +10,6 @@ function PreviousMoodCard({ result, createdAt }) {
   const days = Math.floor(hours / 24);
   const weeks = Math.floor(days / 7);
 
-  console.log(days, weeks);
-
   return (
     <div className="mt-[8px] border-t-[0.1px] shadow-md flex justify-between py-4 px-4 items-center rounded-[10px]">
       <span className="text-sm font-semibold flex items-center">

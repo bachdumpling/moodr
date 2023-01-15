@@ -4,7 +4,7 @@
 
 @layer components {
   .auth-field {
-    @apply lowercase placeholder:capitalize rounded-[10px] border text-black focus:border-green-400 focus:outline-none w-full h-12 placeholder:text-slate-400 px-4 pl-12
+    @apply lowercase placeholder:capitalize rounded-[10px] border text-black focus:border-[#B0CB93] focus:outline-none w-full h-12 placeholder:text-slate-300 px-4 pl-12
   }
 
   .checkin-btn {

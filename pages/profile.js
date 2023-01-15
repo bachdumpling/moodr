@@ -83,7 +83,7 @@ function profile() {
         <div className="flex-col mt-2 mb-2 shadow-md flex px-4 items-center rounded-[10px]">
           <div className="flex w-full justify-between py-4 border-b-[0.1px]">
             <span className="text-sm font-semibold flex items-center">
-              <EnvelopeIcon className="w-6 mr-4 text-green-600" />
+              <EnvelopeIcon className="w-6 mr-4 text-[#B0CB93]" />
               Email
             </span>
 
@@ -92,7 +92,7 @@ function profile() {
 
           <div className="flex w-full justify-between py-4 border-b-[0.1px]">
             <span className="text-sm font-semibold flex items-center">
-              <DeviceTabletIcon className="w-6 mr-4 text-green-600" />
+              <DeviceTabletIcon className="w-6 mr-4 text-[#B0CB93]" />
               My Device
             </span>
 
@@ -101,7 +101,7 @@ function profile() {
 
           <div className="flex w-full justify-between py-4">
             <span className="text-sm font-semibold flex items-center">
-              <BellAlertIcon className="w-6 mr-4 text-green-600" />
+              <BellAlertIcon className="w-6 mr-4 text-[#B0CB93]" />
               Notification
             </span>
 
@@ -116,7 +116,7 @@ function profile() {
         <div className="flex-col mt-2 mb-2 shadow-md flex px-4 items-center rounded-[10px]">
           <div className="flex w-full justify-between py-4 border-b-[0.1px]">
             <span className="text-sm font-semibold flex items-center">
-              <ShieldCheckIcon className="w-6 mr-4 text-green-600" />
+              <ShieldCheckIcon className="w-6 mr-4 text-[#B0CB93]" />
               Privacy Policy
             </span>
 
@@ -125,7 +125,7 @@ function profile() {
 
           <div className="flex w-full justify-between py-4 border-b-[0.1px]">
             <span className="text-sm font-semibold flex items-center">
-              <NewspaperIcon className="w-6 mr-4 text-green-600" />
+              <NewspaperIcon className="w-6 mr-4 text-[#B0CB93]" />
               Terms of Service
             </span>
 
@@ -134,7 +134,7 @@ function profile() {
 
           <div className="flex w-full justify-between py-4">
             <span className="text-sm font-semibold flex items-center">
-              <QuestionMarkCircleIcon className="w-6 mr-4 text-green-600" />
+              <QuestionMarkCircleIcon className="w-6 mr-4 text-[#B0CB93]" />
               Help & Support
             </span>
 
@@ -147,7 +147,7 @@ function profile() {
             onClick={handleLogout}
             className="flex w-full justify-between py-4"
           >
-            <p className="text-sm text-red-500">Log Out</p>
+            <p className="text-sm text-[#EE7B69]">Log Out</p>
           </button>
         </div>
       </div>

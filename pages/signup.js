@@ -94,7 +94,7 @@ function signup() {
           <form onClick={handleSignUp} className="mt-6 space-y-2">
             <div className="grid grid-cols-2 grid-flow-row gap-2">
               <div className="text-sm relative">
-                <div className=" absolute py-4 px-4 text-green-400 ">
+                <div className=" absolute py-4 px-4 text-[#B0CB93] ">
                   <UserIcon className="w-4" />
                 </div>
                 <input
@@ -108,7 +108,7 @@ function signup() {
               </div>
 
               <div className="text-sm relative">
-                <div className=" absolute py-4 px-4 text-green-400 ">
+                <div className=" absolute py-4 px-4 text-[#B0CB93] ">
                   <UserIcon className="w-4" />
                 </div>
                 <input
@@ -123,7 +123,7 @@ function signup() {
             </div>
 
             <div className="text-sm relative">
-              <div className=" absolute py-4 px-4 text-green-400 ">
+              <div className=" absolute py-4 px-4 text-[#B0CB93] ">
                 <EnvelopeIcon className="w-4" />
               </div>
               <input
@@ -137,7 +137,7 @@ function signup() {
             </div>
 
             <div className="text-sm relative">
-              <div className=" absolute py-4 px-4 text-green-400 ">
+              <div className=" absolute py-4 px-4 text-[#B0CB93] ">
                 <FaceSmileIcon className="w-4" />
               </div>
               <input
@@ -151,7 +151,7 @@ function signup() {
             </div>
 
             <div className="text-sm relative">
-              <div className=" absolute py-4 px-4 text-green-400 ">
+              <div className=" absolute py-4 px-4 text-[#B0CB93] ">
                 <TagIcon className="w-4" />
               </div>
               <input
@@ -164,7 +164,7 @@ function signup() {
               />
             </div>
             <div className="text-sm relative">
-              <div className=" absolute py-4 px-4 text-green-400 ">
+              <div className=" absolute py-4 px-4 text-[#B0CB93] ">
                 <LockClosedIcon className="w-4" />
               </div>
               <input

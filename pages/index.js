@@ -78,7 +78,7 @@ export function Home({ user, result, setResult }) {
           <h1 className="font-bold text-4xl capitalize">
             Hi, {user.firstname}
           </h1>
-          <p className="text-md font-bold text-gray-400">Welcome back!</p>
+          <p className="text-md font-bold text-gray-400 py-1">Welcome back!</p>
         </div>
 
         <div className="bg-[#B0CB93] text-white py-4 px-4 rounded-[10px] shadow-md">
@@ -108,7 +108,7 @@ export function Home({ user, result, setResult }) {
                     query: { userid: user.id },
                   });
                 }}
-                className="text-sm text-green-500"
+                className="text-sm text-[#B0CB93]"
               >
                 See More
               </button>

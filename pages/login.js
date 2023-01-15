@@ -60,7 +60,7 @@ function login() {
 
           <form className=" mt-6 space-y-2">
             <div className="text-sm relative">
-              <div className="absolute py-4 px-4 text-green-400 ">
+              <div className="absolute py-4 px-4 text-[#B0CB93] ">
                 <EnvelopeIcon className="w-4" />
               </div>
               <input
@@ -73,7 +73,7 @@ function login() {
               />
             </div>
             <div className="text-sm relative">
-              <div className="absolute py-4 px-4 text-green-400 ">
+              <div className="absolute py-4 px-4 text-[#B0CB93] ">
                 <LockClosedIcon className="w-4" />
               </div>
               <input

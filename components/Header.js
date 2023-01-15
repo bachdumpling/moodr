@@ -8,9 +8,18 @@ function Header() {
   const router = useRouter();
   const id = router.pathname;
 
+  function alert() {
+    alert("Hello! I am a menu button!");
+  }
+
   return (
     <div className=" max-w-sm mx-auto z-10 flex justify-between px-4 py-4 border-b-[1px] fixed top-0 left-0 right-0 bg-[#FFFFFF]">
-      <Bars3Icon className="w-6 " />
+      <Bars3Icon
+        // onClick={
+        //   alert();
+        // }
+        className="w-6 "
+      />
 
       <Link href="/profile">
         {id == "/profile" ? (

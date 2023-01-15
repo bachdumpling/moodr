@@ -42,7 +42,7 @@ function device() {
           <span className="text-sm font-semibold flex items-center">
             {" "}
             <span className="text-3xl pr-4">
-              <EnvelopeIcon className="w-6 text-green-600" />
+              <EnvelopeIcon className="w-6 text-[#B0CB93]" />
             </span>
             Notification
           </span>
@@ -57,7 +57,7 @@ function device() {
           <span className="text-sm font-semibold flex items-center">
             {" "}
             <span className="text-3xl pr-4">
-              <BellAlertIcon className="w-6 text-green-600" />
+              <BellAlertIcon className="w-6 text-[#B0CB93]" />
             </span>
             Haptic Alert
           </span>

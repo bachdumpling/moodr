@@ -7,7 +7,11 @@ function Welcome() {
   return (
     <div className="absolute" style={{ paddingTop: "env(safe-area-inset-top" }}>
       <div className="w-screen h-full flex flex-col justify-center items-center pt-40">
-        <Image className="" src={MoodFinderLandingPage} alt="landing page pic" />
+        <Image
+          className=""
+          src={MoodFinderLandingPage}
+          alt="landing page pic"
+        />
         <div className="text-center px-18 pt-12">
           <p className="text-4xl text-[#B0CB93] font-bold">Welcome to Moodr!</p>
         </div>
@@ -23,7 +27,7 @@ function Welcome() {
         </Link>
         <Link href="/signup">
           <div className="py-2 bg-[#FFFFFF]">
-            <button className="rounded-full w-full h-14 bg-white border border-green-300 text-green-400 font-bold text-lg shadow-md">
+            <button className="rounded-full w-full h-14 bg-white border border-[#B0CB93] text-[#B0CB93] font-bold text-lg shadow-md">
               Create Account
             </button>
           </div>
