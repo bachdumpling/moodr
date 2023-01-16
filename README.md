@@ -1,37 +1,103 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# **Moodr App**
 
-## Getting Started
+_Please view this file in preview_
 
-First, run the development server:
+Moodr is a smart wearable device that tracks your vital information and Moodr App is an accompanied app that combines your vital information from the watch with your answers to behavioral questions to generate your possible mood. The app is supposed to be on IOS. However, because of time constraint, we decided to develop a web application and migrate it to IOS in the future.
+
+<br>
+
+## **Installation**
+
+### Prerequisites
+
+The Moodr App is running on Next.js Client with Ruby on Rails Server. You will need to have these installed on the system:
 
 ```bash
-npm run dev
-# or
-yarn dev
+npm
+ruby -v "2.7.4"
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<br>
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+### Client /moodr
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+You can install the necessary dependencies by running:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```bash
+npm install
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+The client is running on [http://localhost:3001](http://localhost:3001). Click this to view mobile version of website on chrome desktop since the app is developed to be mobile-first:
 
-## Learn More
+<img src="https://asapguide.com/wp-content/uploads/2020/01/mobile-bar.jpg" width="300" height="200">
 
-To learn more about Next.js, take a look at the following resources:
+<br>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Server /moodr-api
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+You can install the necessary dependencies by running:
 
-## Deploy on Vercel
+```bash
+bundle install
+rails db:create
+rails db:migrate
+rails db:seed
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The server is running on [http://localhost:3000](http://localhost:3000)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# moodr
+<br>
+
+## **Features**
+
+- Users can create new accounts, log in and log out of the app
+- Users go through a series of short behavioral questions in /Checkin
+- Generates a possible mood based on users' inputs of vital information and answers to the behavioral questions
+- Returns users' possible moods and saves them to the database
+
+<br>
+
+## **Explore the app**
+
+- Sign up for a new account then log in or use seed user information to log in:
+
+```bash
+username: bachle
+password: 1
+```
+
+- Go to /Checkin page and follow the instructions
+- Receive your result and return home
+
+  <br>
+
+## **Future Improvements**
+
+### Client
+
+- Implement techniques to optimize the performance of the client-side, such as reducing unnecessary fetch requests and minimizing re-renders.
+- Implement code-splitting and dynamic imports to improve the loading time of the app.
+- Refactoring components and components' stylings
+
+### Server
+
+- Implement input validation and sanitization to protect the server from malicious user input, for example, validate that the heart rate values are within a reasonable range (60-200)
+- Implement a serializer to send only the necessary information to the client, to reduce the amount of data sent over the network and improve the performance of the app.
+- Reinforce the check-in data posting to the server, by implementing proper authentication and authorization mechanisms.
+- Implement load balancing and caching mechanism to improve the scalability and performance of the server-side.
+
+  <br>
+
+## **Authors**
+
+- Programmer: [Bach Le](https://bachle.netlify.app/)
+- UI/UX Designer: [Chanbin Moon](https://chanbinmoon.squarespace.com/)
+  <br>
+
+## **Acknowledgments**
+
+- Hat tip to anyone who's code was used
+- Thanks to [Chanbin Moon](https://chanbinmoon.squarespace.com/), my teammate, for invaluable contributions to the project's front-end development.
+- I would also like to thank my friends and family for their support and understanding during the long hours spent working on this project.
+- Thanks to everyone else who knows the feelings of being the only developer 😁. Even though it has been a difficult run, the result is certainly rewarding.
