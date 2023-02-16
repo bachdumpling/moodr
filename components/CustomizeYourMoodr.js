@@ -19,7 +19,7 @@ function CustomizeYourMoodr({user}) {
           <DeviceTabletIcon className="w-5" />
         </div>
         <span className="flex flex-col items-left">
-          <span className="font-semibold text-lg capitalize">{user.firstname}'s Moodr</span>
+          <span className="font-semibold text-lg capitalize w-full text-left">{user.firstname}&apos;s Moodr</span>
           <p className="text-xs text-gray-500">Customize to fit your needs</p>
         </span>
       </div>

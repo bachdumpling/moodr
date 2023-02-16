@@ -14,7 +14,7 @@ import Cookies from "js-cookie";
 import { Router, useRouter } from "next/router";
 import Welcome from "../components/Welcome";
 
-export default function homePage() {
+export default function HomePage() {
   const [user, setUser] = useState({});
   const [result, setResult] = useState([]);
 
@@ -85,13 +85,13 @@ export function Home({ user, result, setResult }) {
           {/* <div className="border absolute rounded-full w-32 h-32" ></div> */}
           <p className="font-bold text-2xl">Find Your Mood</p>
           <p className="w-5/6 text-sm">
-            Let's find out how you are feeling by completing a short
+            Let&apos;s find out how you are feeling by completing a short
             questionnaire!
           </p>
 
           <Link href="/checkin">
             <button className="mt-4 rounded-full w-full h-14 bg-[#FFFFFF] cursor-pointer text-[#516D33] font-bold text-lg shadow-sm bg-opacity-80">
-              Let's Start
+              Let&apos;s Start
             </button>
           </Link>
         </div>

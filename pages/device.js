@@ -7,7 +7,7 @@ import { BellAlertIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
 import Switch from "react-ios-switch";
 import Cookies from "js-cookie";
 
-function device() {
+function Device() {
   const [user, setUser] = useState({});
   useEffect(() => {
     async function getData() {
@@ -25,7 +25,7 @@ function device() {
           <span className="font-bold text-4xl capitalize">
             {user.firstname}
           </span>
-          <span className="font-bold text-4xl ">'s Moodr</span>
+          <span className="font-bold text-4xl ">&apos;s Moodr</span>
         </div>
       </div>
 
@@ -33,7 +33,7 @@ function device() {
         <p className="font-bold text-2xl px-4 py-4">Watch Faces</p>
         <div className="px-4 flex overflow-x-auto gap-4 scrollbar-hide w-screen">
           {WatchUI.map((item) => {
-            return <Image className="w-24" src={item} alt="Watch UI" />;
+            return <Image className="w-24" src={item} alt="Watch UI" key={`${item} + 1`} />;
           })}
         </div>
 
@@ -73,4 +73,4 @@ function device() {
   );
 }
 
-export default device;
+export default Device;

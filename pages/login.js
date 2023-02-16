@@ -12,7 +12,7 @@ import { getSession, signIn, useSession } from "next-auth/react";
 import Cookies from "js-cookie";
 import { useRouter } from "next/router";
 
-function login() {
+function Login() {
   const router = useRouter();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -116,4 +116,4 @@ function login() {
   );
 }
 
-export default login;
+export default Login;

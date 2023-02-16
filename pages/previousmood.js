@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 import { api } from "../components/Api";
 import Cookies from "js-cookie";
 
-function previousmood() {
+function Previousmood() {
   const router = useRouter();
   const [result, setResult] = useState([]);
   const [user, setUser] = useState({});
@@ -51,4 +51,4 @@ function previousmood() {
   );
 }
 
-export default previousmood;
+export default Previousmood;

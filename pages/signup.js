@@ -15,7 +15,7 @@ import React, { use, useState } from "react";
 import signupSvg from "../asset/signupSvg.svg";
 import { api } from "../components/Api";
 
-function signup() {
+function Signup() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [firstname, setFirstname] = useState("");
@@ -210,4 +210,4 @@ function signup() {
   );
 }
 
-export default signup;
+export default Signup;

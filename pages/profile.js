@@ -1,9 +1,5 @@
 import React from "react";
 import {
-  Bars3Icon,
-  UserCircleIcon,
-  HomeIcon,
-  FaceSmileIcon,
   DeviceTabletIcon,
   ChevronRightIcon,
   EnvelopeIcon,
@@ -13,17 +9,7 @@ import {
   ShieldCheckIcon,
   QuestionMarkCircleIcon,
 } from "@heroicons/react/24/outline";
-import {
-  HomeIcon as HomeIconSolid,
-  FaceSmileIcon as FaceSmileIconSolid,
-  DeviceTabletIcon as DeviceTabletIconSolid,
-} from "@heroicons/react/24/solid";
-import PreviousMoodCard from "../components/PreviousMoodCard";
-import CustomizeYourMoodr from "../components/CustomizeYourMoodr";
-import Link from "next/link";
-import Data, { questionTable, userTable, vitalTable } from "../components/Data";
 import { useEffect, useState } from "react";
-import { api } from "../components/Api";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Switch from "react-ios-switch/lib/Switch";
@@ -31,7 +17,7 @@ import Image from "next/image";
 import Cookies from "js-cookie";
 import { useRouter } from "next/router";
 
-function profile() {
+function Profile() {
   const router = useRouter();
   const [user, setUser] = useState({});
   useEffect(() => {
@@ -65,7 +51,6 @@ function profile() {
             <Image
               width={100}
               height={100}
-              src="https://st3.depositphotos.com/6672868/13701/v/600/depositphotos_137014128-stock-illustration-user-profile-icon.jpg"
               className=" w-24 h-24 rounded-full object-contain"
               alt="avatar"
             />
@@ -157,4 +142,4 @@ function profile() {
   );
 }
 
-export default profile;
+export default Profile;

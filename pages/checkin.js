@@ -18,7 +18,7 @@ import checkMood from "../components/MoodChecker";
 import CheckinPage5 from "../components/CheckinPage5";
 import Cookies from "js-cookie";
 
-function checkin() {
+function Checkin() {
   const [user, setUser] = useState({});
   useEffect(() => {
     async function getData() {
@@ -184,4 +184,4 @@ function checkin() {
   );
 }
 
-export default checkin;
+export default Checkin;

@@ -5,12 +5,11 @@ import "../styles/globals.css";
 export default function App({ Component, pageProps }) {
   return (
     // <SessionProvider session={pageProps.session} basePath="/">
-    <RecoilRoot>
-      {/* <div className="bg-black w-full h-full -z-50"> */}
-
+    // <RecoilRoot>
+    <div>
       <Component {...pageProps} />
-      {/* </div> */}
-    </RecoilRoot>
+    </div>
+    // </RecoilRoot>
     // </SessionProvider>
   );
 }

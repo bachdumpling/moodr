@@ -37,7 +37,7 @@ function CheckinPage2({ nextPage, previousPage, answer2, setAnswer2 }) {
 
         <div className="flex justify-between items-center h-20 rounded-[10px] mx-4 px-4 shadow-lg">
           <label className="text-sm">
-            It doesn't really have much of an effect
+            It doesn&apos;t really have much of an effect
           </label>
           <input
             onClick={() => {
