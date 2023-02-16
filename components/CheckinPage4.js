@@ -4,6 +4,7 @@ import Activity from "../asset/Activity.svg";
 import Heartbeat from "../asset/Heartbeat.svg";
 import ThermometerSimple from "../asset/ThermometerSimple.svg";
 import Image from "next/image";
+import { ExclamationCircleIcon } from "@heroicons/react/24/solid";
 
 function CheckinPage4({
   nextPage,
@@ -11,7 +12,7 @@ function CheckinPage4({
   wristTemp,
   heartRate,
   setHeartRate,
-  setWristTemp
+  setWristTemp,
 }) {
   // console.log(heartRate, wristTemp);
 
@@ -29,7 +30,7 @@ function CheckinPage4({
         </div>
       </div>
 
-      <div className="grid mt-8 mb-8 gap-y-3 grid-flow-col grid-rows-3 grid-cols-1">
+      <div className="grid mt-8 mb-8 gap-y-4 grid-flow-col grid-rows-2 grid-cols-1">
         <div className="flex justify-between items-center h-20 rounded-[10px] mx-4 shadow-lg px-8">
           <div className="flex w-4/6 h-full justify-start items-center">
             <Image src={Heartbeat} className="w-8 mr-8" alt="Heart beat" />
@@ -65,12 +66,25 @@ function CheckinPage4({
         </div>
       </div>
 
+      <div className="text-[#999999] mx-4 text-xs">
+        <div className="border-b flex py-2 items-center">
+          <ExclamationCircleIcon className="text-[#D9D9D9] h-4 w-4 mr-2" />
+          <p>Reference</p>
+        </div>
+        <div className="flex flex-col py-2 space-y-2">
+          <p>
+            <span className="text-[#EE7B69]">Heart Rate: </span>
+            80-150 BPM (beats per minute) is considered normal
+          </p>
+          <p>
+            <span className="text-[#EE7B69]">Wrist Temperature: </span>
+            93-97°F is considered normal
+          </p>
+        </div>
+      </div>
       <footer className="z-10 flex justify-between px-4 py-4 pb-14 fixed bottom-0 left-0 right-0">
         {heartRate && wristTemp ? (
-          <button
-            type="submit"
-            className="checkin-btn bg-[#ee7b69]"
-          >
+          <button type="submit" className="checkin-btn bg-[#ee7b69]">
             Submit
           </button>
         ) : (

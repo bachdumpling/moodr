@@ -16,6 +16,7 @@ import Switch from "react-ios-switch/lib/Switch";
 import Image from "next/image";
 import Cookies from "js-cookie";
 import { useRouter } from "next/router";
+import { UserCircleIcon } from "@heroicons/react/24/solid";
 
 function Profile() {
   const router = useRouter();
@@ -47,11 +48,9 @@ function Profile() {
         </div>
 
         <div className="py-6 flex justify-start items-center">
-          <div className="w-24 h-24 rounded-full mr-6">
-            <Image
-              width={100}
-              height={100}
-              className=" w-24 h-24 rounded-full object-contain"
+          <div className="w-28 h-28 rounded-full mr-6">
+            <UserCircleIcon
+              className=" w-28 h-28 rounded-full object-contain"
               alt="avatar"
             />
           </div>
