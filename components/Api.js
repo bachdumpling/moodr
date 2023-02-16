@@ -1,2 +1,2 @@
 import React from 'react'
-export const api = "http://127.0.0.1:3000";
+export const api = "https://moodr-api.onrender.com";
