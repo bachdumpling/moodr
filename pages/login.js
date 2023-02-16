@@ -42,16 +42,15 @@ function Login() {
         router.push("/loginsuccessful");
       });
   }
-
   return (
     // <div className="absolute" style={{ paddingTop: "env(safe-area-inset-top" }}>
-      <div>
+      <div className="max-w-md mx-auto">
       <Link href="/">
-        <div className="z-10 flex justify-between px-4 py-4 pt-8 fixed top-0 left-0 right-0">
+        <div className="z-10 flex justify-between px-4 py-4 pt-8 top-0 left-0 right-0">
           <ChevronLeftIcon className="w-6" />
         </div>
       </Link>
-      <div className="w-screen h-full flex flex-col justify-center items-center pt-32">
+      <div className="w-full h-full flex flex-col justify-center items-center pt-32">
         <Image className="w-40" src={loginSvg} alt="login image" />
 
         <div className="pt-4 flex justify-start flex-col w-full px-4 py-4">

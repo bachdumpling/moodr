@@ -78,9 +78,9 @@ function Signup() {
 
   return (
     // <div className="absolute" style={{ paddingTop: "env(safe-area-inset-top" }}>
-    <div className="">
+    <div className="max-w-md mx-auto">
       <Link href="/">
-        <div className="flex justify-between px-4 py-4 pt-8 fixed top-0 left-0 right-0">
+        <div className="flex justify-between px-4 py-4 pt-8 top-0 left-0 right-0">
           <ChevronLeftIcon className="w-6" />
         </div>
       </Link>
