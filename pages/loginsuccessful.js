@@ -28,7 +28,7 @@ function LoginSuccessful() {
   }
 
   return (
-    <div className="w-full h-screen">
+    <div className="max-w-lg h-screen mx-auto">
       <div className="w-full flex flex-col justify-center items-center">
         <Image
           className="w-54 fixed top-44"
@@ -36,7 +36,7 @@ function LoginSuccessful() {
           alt="sign up photo"
         />
 
-        <div className="w-full fixed bottom-0 right-0 left-0 pb-10">
+        <div className="max-w-lg mx-auto fixed bottom-0 right-0 left-0 pb-10 ">
           <div className="flex flex-col w-full px-4 py-4 font-bold text-4xl justify-center items-center pb-8">
             <h1 className="py-2">Welcome Back,</h1>
             <p className="text-[#B0CB93] capitalize">{user.firstname}!</p>

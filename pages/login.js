@@ -36,6 +36,8 @@ function Login() {
             Cookies.set("email", user.email);
             Cookies.set("age", user.age);
           });
+        } else {
+          console.log("error");
         }
       })
       .then(() => {
