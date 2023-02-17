@@ -6,9 +6,9 @@ import { ChevronLeftIcon } from "@heroicons/react/24/outline";
 
 function CheckinPage0({ nextPage }) {
   return (
-    <>
+    <div className="">
       <Link href="/">
-        <div className="z-10 flex justify-between px-4 py-4 pt-8 fixed top-0 left-0 right-0 bg-[#FFFFFF]">
+        <div className="z-10 flex justify-between px-4 py-4 pt-8 top-0 left-0 right-0 bg-[#FFFFFF]">
           <ChevronLeftIcon className="w-6 " />
         </div>
       </Link>
@@ -27,7 +27,7 @@ function CheckinPage0({ nextPage }) {
           Continue
         </button>
       </footer>
-    </>
+    </div>
   );
 }
 
