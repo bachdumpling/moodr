@@ -66,8 +66,8 @@ function Welcome() {
       </div>
 
       {popup && (
-        <div className="fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-50 z-50 flex justify-center items-center">
-          <div className="w-full h-screen md:w-[550px] md:h-[800px] bg-white rounded-lg flex flex-col justify-center items-center overflow-y-scroll">
+        <div className="fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-50 z-50 justify-center items-center hidden md:flex">
+          <div className="w-full h-full md:w-[550px] md:h-[800px] bg-white rounded-lg flex flex-col justify-center items-center overflow-y-scroll">
             <div className="flex flex-col justify-center items-center mt-32 sm:mt-10 md:mt-0">
               <p className="text-4xl font-bold">Welcome to Moodr!</p>
               <div className="flex flex-col justify-center items-center mt-6 space-y-2">
