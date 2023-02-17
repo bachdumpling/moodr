@@ -40,9 +40,10 @@ function CheckinPage4({
             onChange={(e) => {
               setHeartRate(e.target.value);
             }}
-            type="text"
+            type="number"
             required
-            className="w-[4.5rem] h-9 bg-gray-100 appearance-none rounded py-2 pl-4 pr-2 text-gray-700 focus:border-[#ee7b69] focus:outline-none focus:border"
+            placeholder="BPM"
+            className="w-[4rem] h-9 bg-gray-100 appearance-none rounded py-2 pl-4 pr-2 text-gray-700 focus:border-[#ee7b69] focus:outline-none focus:border placeholder:text-right text-sm"
           />
         </div>
 
@@ -59,9 +60,10 @@ function CheckinPage4({
             onChange={(e) => {
               setWristTemp(e.target.value);
             }}
-            type="text"
+            type="number"
             required
-            className="w-[4.5rem] h-9 bg-gray-100 appearance-none rounded py-2 pl-4 pr-2 text-gray-700 focus:border-[#ee7b69] focus:outline-none focus:border"
+            placeholder="°F"
+            className="w-[4rem] h-9 bg-gray-100 appearance-none rounded py-2 pl-4 pr-2 text-gray-700 focus:border-[#ee7b69] focus:outline-none focus:border placeholder:text-right text-sm"
           />
         </div>
       </div>

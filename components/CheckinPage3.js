@@ -30,7 +30,7 @@ function CheckinPage3({ nextPage, previousPage, answer3, setAnswer3 }) {
                 checked={answer3 === "1"}
                 value="1"
                 name="1"
-                className="w-4 h-4 appearance-none rounded-full checked:bg-blue-400"
+                className="cursor-pointer w-4 h-4 appearance-none rounded-full checked:bg-blue-400"
               />
             </div>
           </div>
@@ -47,7 +47,7 @@ function CheckinPage3({ nextPage, previousPage, answer3, setAnswer3 }) {
                 checked={answer3 === "2"}
                 value="2"
                 name="2"
-                className="w-4 h-4 appearance-none rounded-full checked:bg-blue-400"
+                className="cursor-pointer w-4 h-4 appearance-none rounded-full checked:bg-blue-400"
               />
             </div>
           </div>
@@ -64,7 +64,7 @@ function CheckinPage3({ nextPage, previousPage, answer3, setAnswer3 }) {
                 checked={answer3 === "3"}
                 value="3"
                 name="3"
-                className="w-4 h-4 appearance-none rounded-full checked:bg-blue-400"
+                className="cursor-pointer w-4 h-4 appearance-none rounded-full checked:bg-blue-400"
               />
             </div>
           </div>
@@ -81,7 +81,7 @@ function CheckinPage3({ nextPage, previousPage, answer3, setAnswer3 }) {
                 checked={answer3 === "4"}
                 value="4"
                 name="4"
-                className="w-4 h-4 appearance-none rounded-full checked:bg-blue-400"
+                className="cursor-pointer w-4 h-4 appearance-none rounded-full checked:bg-blue-400"
               />
             </div>
           </div>
@@ -98,7 +98,7 @@ function CheckinPage3({ nextPage, previousPage, answer3, setAnswer3 }) {
                 checked={answer3 === "5"}
                 value="5"
                 name="5"
-                className="w-4 h-4 appearance-none rounded-full checked:bg-blue-400"
+                className=" cursor-pointer w-4 h-4 appearance-none rounded-full checked:bg-blue-400"
               />
             </div>
           </div>

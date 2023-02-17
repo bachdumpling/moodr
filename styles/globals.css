@@ -4,10 +4,21 @@
 
 @layer components {
   .auth-field {
-    @apply lowercase placeholder:capitalize rounded-[10px] border text-black focus:border-[#B0CB93] focus:outline-none w-full h-12 placeholder:text-slate-300 px-4 pl-12
+    @apply lowercase placeholder:capitalize rounded-[10px] border text-black focus:border-[#B0CB93] focus:outline-none w-full h-12 placeholder:text-slate-300 px-4 pl-12;
   }
 
   .checkin-btn {
-    @apply rounded-full w-full h-14 text-white font-bold text-lg shadow-sm
+    @apply rounded-full w-full h-14 text-white font-bold text-lg shadow-sm;
+  }
+}
+
+@layer base {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type="number"] {
+    -moz-appearance: textfield;
   }
 }
