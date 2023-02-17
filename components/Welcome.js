@@ -116,8 +116,8 @@ function Welcome() {
                   </li>
                 </ul>
                 <p className="pl-11 pt-2 text-sm">
-                  You can also find the menu item under (“Tools”), “Web
-                  Developer”, “Responsive Design Mode”.
+                  You can also find the menu item under (&quot;Tools&quot;), &quot;Web
+                  Developer&quot;, &quot;Responsive Design Mode&quot;
                 </p>
               </div>
             </div>
@@ -136,7 +136,7 @@ function Welcome() {
               </div>
               <div className="text-sm space-y-4">
                 <p className="pl-11 pt-2">
-                  You need to have "Developer Tools" open first:
+                  You need to have &quot;Developer Tools&quot; open first
                 </p>
                 <ul className="text-[#999999] list-disc pl-7 py-2 space-y-6">
                   <li className="pl-4">
@@ -178,7 +178,7 @@ function Welcome() {
                 </ul>
                 <p className="pl-11 pr-6">
                   Once developer tools is open and focused, you can toggle
-                  device emulation:
+                  device emulation
                 </p>
                 <ul className="text-[#999999] list-disc pl-7 py-2 space-y-6">
                   <li className="pl-4">
