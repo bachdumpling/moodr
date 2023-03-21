@@ -1,6 +1,7 @@
 import {
   ChevronLeftIcon,
   EnvelopeIcon,
+  ExclamationCircleIcon,
   LockClosedIcon,
 } from "@heroicons/react/24/outline";
 import Image from "next/image";
@@ -16,9 +17,11 @@ function Login() {
   const router = useRouter();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   function handleLogin(e) {
     e.preventDefault();
+    setIsLoading(true);
     fetch(api + "/login", {
       method: "POST",
       headers: {
@@ -41,12 +44,13 @@ function Login() {
         }
       })
       .then(() => {
+        setIsLoading(false);
         router.push("/loginsuccessful");
       });
   }
   return (
     // <div className="absolute" style={{ paddingTop: "env(safe-area-inset-top" }}>
-      <div className="max-w-md mx-auto">
+    <div className="max-w-md mx-auto">
       <Link href="/">
         <div className="z-10 flex justify-between px-4 py-4 pt-8 top-0 left-0 right-0">
           <ChevronLeftIcon className="w-6" />
@@ -87,7 +91,14 @@ function Login() {
               />
             </div>
             <div className="flex justify-between py-6">
-              {username && password ? (
+              {isLoading ? (
+                <button
+                  disabled={true}
+                  className="rounded-full w-full h-14 bg-gray-400 text-white font-bold text-lg shadow-md"
+                >
+                  Loading...
+                </button>
+              ) : username && password ? (
                 <button
                   onClick={handleLogin}
                   className="rounded-full w-full h-14 bg-[#B0CB93] text-white font-bold text-lg shadow-md"
@@ -110,6 +121,22 @@ function Login() {
             <p className="text-blue-400 pl-2">
               <Link href="/signup">Create Account</Link>
             </p>
+          </div>
+
+          <div className="text-[#999999] mx-0 mt-4 text-xs">
+            <div className="border-b flex py-2 items-center">
+              <ExclamationCircleIcon className="text-[#EE7B69] h-4 w-4 mr-2" />
+              <p className="text-[#EE7B69]">Test Account</p>
+            </div>
+            <div className="flex flex-col py-2 space-y-2">
+              <p>
+                <span className="text-[#999999]">Username: </span>
+                bachle
+              </p>
+              <p>
+                <span className="text-[#999999]">Password: </span>1
+              </p>
+            </div>
           </div>
         </div>
       </div>
